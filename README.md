@@ -7,8 +7,6 @@ Here’s a **professional, comprehensive `README.md`** for your GitHub repositor
 A **secure, responsive, and dependency-free** blog application built with **vanilla technologies**. Supports Markdown editing, featured images, and user authentication — all without frameworks.
 
 [![Live Demo](https://img.shields.io/badge/demo-live-2ea44f?style=flat-square)](https://itmuom.page.gd)  
-[![PHP](https://img.shields.io/badge/PHP-8.0+-777BB4?logo=php&logoColor=white)](https://www.php.net)
-[![MySQL](https://img.shields.io/badge/MySQL-5.7+-4479A1?logo=mysql&logoColor=white)](https://www.mysql.com)
 
 ---
 
