@@ -4,7 +4,7 @@ Here’s a **professional, comprehensive `README.md`** for your GitHub repositor
 
 # 📄 **MyBlog – A Minimalist Markdown Blog Engine**
 
-A **secure, responsive, and dependency-free** blog application built with **vanilla technologies**. Supports Markdown editing, featured images, dark mode, and user authentication — all without frameworks.
+A **secure, responsive, and dependency-free** blog application built with **vanilla technologies**. Supports Markdown editing, featured images, and user authentication — all without frameworks.
 
 [![Live Demo](https://img.shields.io/badge/demo-live-2ea44f?style=flat-square)](https://itmuom.page.gd)  
 [![PHP](https://img.shields.io/badge/PHP-8.0+-777BB4?logo=php&logoColor=white)](https://www.php.net)
@@ -17,7 +17,6 @@ A **secure, responsive, and dependency-free** blog application built with **vani
 - ✍️ **Markdown Editor**: Write with SimpleMDE (bold, code, lists, tables)
 - 🖼️ **Featured Images**: Upload JPG/PNG/WebP for posts
 - 🔒 **Secure Auth**: `password_hash()`, prepared statements, XSS sanitization
-- 🌓 **Dark/Light Mode**: System-aware with toggle
 - 📱 **Fully Responsive**: Mobile-first design
 - 🚀 **Zero Frameworks**: Pure HTML/CSS/JS + PHP/MySQL
 - 🌐 **Hosting Ready**: Works on XAMPP → InfinityFree
@@ -51,7 +50,7 @@ A **secure, responsive, and dependency-free** blog application built with **vani
 │   └── style.css              # Unified light/dark theme
 ├── js/
 │   ├── main.js                # Core utilities
-│   └── theme.js               # Theme toggle logic
+│   └── theme.js              
 ├── lib/
 │   ├── simplemde.min.js       # Markdown editor
 │   └── marked.min.js          # Markdown → HTML parser
@@ -72,7 +71,7 @@ A **secure, responsive, and dependency-free** blog application built with **vani
 ### Setup
 1. **Clone** this repo into `htdocs/`:
    ```bash
-   git clone https://github.com/your-username/myblog.git
+   git clone https://github.com/Sakvith12/Blog-App
    cd myblog
    ```
 
@@ -111,7 +110,7 @@ A **secure, responsive, and dependency-free** blog application built with **vani
 ## 🌐 Deployment (InfinityFree)
 
 1. **Prepare Files**:
-   - Remove `/myblog/` from all API paths (e.g., `/myblog/backend/...` → `/backend/...`)
+   - Remove `/blog-app2/` from all API paths (e.g., `/blog-app2/backend/...` → `/backend/...`)
    - Update `backend/config/db.php` with InfinityFree credentials
 
 2. **Upload**:
@@ -165,7 +164,7 @@ MIT License — see [LICENSE](LICENSE)
 ---
 
 > ✨ **This project proves you don’t need frameworks to build secure, modern web apps.**  
-> — Built with ❤️ by [Your Name]
+
 
 ---
 
