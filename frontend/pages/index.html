@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBlog</title>
+    <script src="../lib/marked.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+
+
+<body>
+
+<nav class="navbar">
+    <div class="container">
+        <h1><a href="index.html">MyBlog</a></h1>
+        <div class="nav-buttons">
+            
+        </div>
+    </div>
+</nav>
+    
+
+    <div class="container">
+        <h2>All Blog Posts</h2>
+        <div id="posts"></div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script>
+    //     checkAuth().then(user => {
+    //     if (user) {
+    //         // Target the NEW nav-buttons container
+    //         const navButtons = document.querySelector('.nav-buttons');
+    //         if (navButtons) {
+    //             navButtons.innerHTML = `
+    //                 <div class="welcome-text">
+    //                     <i class="fas fa-user"></i>
+    //                     <span>${user.username}</span>
+    //                 </div>
+    //                 <button class="btn btn-primary" onclick="window.location.href='create.html'">New Post</button>
+    //                 <button class="btn btn-secondary" onclick="logout()">Logout</button>
+    //             `;
+    //         }
+    //         loadPosts(); // ← Now this will run!
+    //     } else {
+    //         window.location.href = 'login.html';
+    //     }
+    // });
+
+    checkAuth().then(user => {
+    if (!user) {
+        window.location.href = 'login.html?' + Date.now();
+        return;
+    }
+    renderNavButtons(user);
+    loadPosts();
+});
+
+        async function loadPosts() {
+    const res = await fetch('/blog-app2/backend/api/posts/list.php');
+    const posts = await res.json();
+    const container = document.getElementById('posts');
+    
+    if (posts.length === 0) {
+        container.innerHTML = '<p>No posts yet.</p>';
+        return;
+    }
+
+    function markdownToPlainText(markdown, maxLength = 200) {
+        if (!markdown) return '';
+        let html = marked.parse(markdown);
+        const temp = document.createElement('div');
+        temp.innerHTML = html;
+        let text = temp.textContent || temp.innerText || '';
+        text = text.replace(/\s+/g, ' ').trim();
+        if (text.length > maxLength) {
+            return text.substring(0, maxLength) + '...';
+        }
+        return text;
+    }
+
+    container.innerHTML = posts.map(post => {
+        const preview = markdownToPlainText(post.content, 200); 
+        let imageHtml = '';
+        if (post.image) {
+            imageHtml = `<img src="/blog-app2/uploads/${post.image}" alt="Featured" style="width:100%; max-height:200px; object-fit:cover; border-radius:4px; margin-bottom:10px;">`;
+        }
+        return `
+            <div class="post-preview">
+                ${imageHtml}
+                <div class="post-content-wrapper">
+                <h3><a href="view.html?id=${post.id}">${escapeHtml(post.title)}</a></h3>
+                <p class="meta">By ${escapeHtml(post.username)} on ${post.created_at}</p>
+                <p class="post-preview-text">${escapeHtml(preview)}</p>
+            </div>
+            </div>
+        `;
+    }).join('');
+}
+        
+    </script>
+</body>
+</html>
