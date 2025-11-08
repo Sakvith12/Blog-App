@@ -103,7 +103,7 @@ A **secure, responsive, and dependency-free** blog application built with **vani
 
 3. **Start Apache & MySQL** in XAMPP Control Panel
 
-4. **Visit**: `http://localhost/myblog/index.html`
+4. **Visit**: `http://localhost/blog-app2/frontend/index.html`
 
 ---
 
