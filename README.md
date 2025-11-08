@@ -2,7 +2,7 @@ Here’s a **professional, comprehensive `README.md`** for your GitHub repositor
 
 ---
 
-# 📄 **MyBlog – A Minimalist Markdown Blog Engine**
+#  **MyBlog – A Minimalist Markdown Blog Engine**
 
 A **secure, responsive, and dependency-free** blog application built with **vanilla technologies**. Supports Markdown editing, featured images, and user authentication — all without frameworks.
 
@@ -147,26 +147,7 @@ A **secure, responsive, and dependency-free** blog application built with **vani
 | Edit/Delete others' post | ❌ Forbidden (403) |
 | Logout → Back button | Redirects to login (no cached auth) |
 
----
 
-## 📜 License
-
-MIT License — see [LICENSE](LICENSE)
-
----
-
-## 🙏 Acknowledgements
-
-- [SimpleMDE](https://github.com/sparksuite/simplemde-markdown-editor)
-- [Marked.js](https://github.com/markedjs/marked)
-- [Font Awesome](https://fontawesome.com) (for icons)
-
----
-
-> ✨ **This project proves you don’t need frameworks to build secure, modern web apps.**  
-
-
----
 
 ✅ **Ready to develop, deploy, and extend!**  
 Just `git clone`, set up DB, and start blogging.
